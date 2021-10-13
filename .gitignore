@@ -1,0 +1,6 @@
+node_modules
+
+# managed
+**.data.json
+**.node-persist**
+# end managed
