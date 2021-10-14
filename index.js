@@ -21,7 +21,7 @@ app.get('/sendmessage', async (req, res) => {
     const contact = contacts.filter(({ name: contactName }) => contactName && contactName === (pessoas[name] || name))[0];
     console.log(pessoas[name], name, contact);
     if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
-    // await client.sendText(contact.id, message);
+    await client.sendText(contact.id, message);
     res.end();
 });
 
