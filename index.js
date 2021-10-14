@@ -27,4 +27,4 @@ app.get('/sendmessage', async (req, res) => {
 
 app.get('/', (req, res) => res.send('Ok'));
 
-app.listen(80, _ => console.log('Rodando na porta 80'))
+app.listen(9090, _ => console.log('Rodando na porta 9090'))
