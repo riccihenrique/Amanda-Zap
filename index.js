@@ -5,11 +5,11 @@ const app = express();
 let client = {};
 
 const pessoas = {
-    duda: 'mor 💙',
-    pai: 'pai',
-    mãe: 'mãe',
+    'duda': 'mor 💙',
+    'pai': 'pai',
+    'mãe': 'mãe',
     'tenente lucas': 'tenente lucas',
-    zé: zé,
+    'zé': 'zé',
     'dona alice': 'dona alice',
     'mateus': 'matias',
 };
