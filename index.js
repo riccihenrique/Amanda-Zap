@@ -5,7 +5,13 @@ const app = express();
 let client = {};
 
 const pessoas = {
-    duda: 'Mor 💙',
+    duda: 'mor 💙',
+    pai: 'pai',
+    mãe: 'mãe',
+    'tenente lucas': 'tenente lucas',
+    zé: zé,
+    'dona alice': 'dona alice',
+    'mateus': 'matias',
 };
 
 wa.create().then(cli => {
@@ -18,7 +24,7 @@ app.get('/sendmessage', async (req, res) => {
     if(!message) res.status(400).json({ message: 'Mensagem não reconhecida' });
 
     const contacts = await client.getAllContacts();
-    const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === (pessoas[name] || name))[0];
+    const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name])[0];
     console.log(pessoas[name], name, contact);
     if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
     await client.sendText(contact.id, message);
