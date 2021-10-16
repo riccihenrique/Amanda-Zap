@@ -23,12 +23,18 @@ app.get('/sendmessage', async (req, res) => {
     if(!name) res.status(400).json({ message: 'Nome não reconhecido' });
     if(!message) res.status(400).json({ message: 'Mensagem não reconhecida' });
 
-    const contacts = await client.getAllContacts();
-    const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name])[0];
-    console.log(pessoas[name], name, contact);
-    if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
-    await client.sendText(contact.id, message);
-    res.end();
+    try {
+        const contacts = await client.getAllContacts();
+        const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name])[0];
+        console.log(pessoas[name], name, contact);
+        if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
+        await client.sendText(contact.id, message);
+        res.end();
+    }
+    catch(ex) {
+        console.error(ex);
+        res.status(500).end();
+    }
 });
 
 app.get('/', (req, res) => res.send('Ok'));
