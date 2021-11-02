@@ -26,13 +26,12 @@ app.get('/sendmessage', async (req, res) => {
     try {
         const contacts = await client.getAllContacts();
         const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name])[0];
-        console.log(pessoas[name], name, contact);
         if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
         await client.sendText(contact.id, message);
         res.end();
     }
     catch(ex) {
-        console.error(ex);
+        console.error(ex.message);
         res.status(500).end();
     }
 });
