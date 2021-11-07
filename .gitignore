@@ -4,3 +4,6 @@ node_modules
 **.data.json
 **.node-persist**
 # end managed
+logs
+*.data.json
+_IGNORE*

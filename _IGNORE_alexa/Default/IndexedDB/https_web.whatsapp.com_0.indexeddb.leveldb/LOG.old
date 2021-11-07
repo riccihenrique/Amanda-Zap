@@ -1,0 +1,30 @@
+2021/11/07-11:27:18.485 1554 Reusing MANIFEST C:\Users\ricci\Desktop\Amanda_Zap\_IGNORE_alexa\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/11/07-11:27:18.487 1554 Recovering log #27
+2021/11/07-11:27:18.491 1554 Reusing old log C:\Users\ricci\Desktop\Amanda_Zap\_IGNORE_alexa\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000027.log 
+2021/11/07-11:27:18.492 1554 Delete type=2 #26
+2021/11/07-11:27:18.700 384c Manual compaction at level-0 from '\x00\x0d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0e\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/11/07-11:27:18.721 384c Level-0 table #32: started
+2021/11/07-11:27:18.728 384c Level-0 table #32: 8297 bytes OK
+2021/11/07-11:27:18.730 384c Delete type=0 #27
+2021/11/07-11:27:18.732 3b1c Manual compaction at level-0 from '\x00\x0c\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0d\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0e\x00\x00\x05' @ 76126 : 1
+2021/11/07-11:27:18.732 3b1c Compacting 1@0 + 1@1 files
+2021/11/07-11:27:18.801 3b1c Generated table #33@0: 20743 keys, 171767 bytes
+2021/11/07-11:27:18.801 3b1c Compacted 1@0 + 1@1 files => 171767 bytes
+2021/11/07-11:27:18.803 3b1c compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/11/07-11:27:18.804 3b1c Delete type=2 #32
+2021/11/07-11:27:18.805 3b1c Manual compaction at level-0 from '\x00\x0e\x00\x00\x05' @ 76126 : 1 .. '\x00\x0d\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/11/07-11:27:18.829 3b1c Level-0 table #35: started
+2021/11/07-11:27:18.853 3b1c Level-0 table #35: 3654 bytes OK
+2021/11/07-11:27:18.854 3b1c Delete type=2 #29
+2021/11/07-11:27:18.854 3b1c Delete type=0 #31
+2021/11/07-11:27:18.855 3b1c Manual compaction at level-0 from '\x00\x0e\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0f\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0e\x00\x00\xc8\x03\x00w\x00a\x00m' @ 76310 : 1
+2021/11/07-11:27:18.855 3b1c Compacting 1@0 + 1@1 files
+2021/11/07-11:27:18.919 3b1c Generated table #36@0: 20742 keys, 171714 bytes
+2021/11/07-11:27:18.919 3b1c Compacted 1@0 + 1@1 files => 171714 bytes
+2021/11/07-11:27:18.920 3b1c compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/11/07-11:27:18.920 3b1c Delete type=2 #35
+2021/11/07-11:27:18.921 3b1c Manual compaction at level-0 from '\x00\x0e\x00\x00\xc8\x03\x00w\x00a\x00m' @ 76310 : 1 .. '\x00\x0f\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/11/07-11:27:37.655 33e8 Level-0 table #38: started
+2021/11/07-11:27:37.696 33e8 Level-0 table #38: 1169591 bytes OK
+2021/11/07-11:27:37.698 33e8 Delete type=2 #33
+2021/11/07-11:27:37.698 33e8 Delete type=0 #34
