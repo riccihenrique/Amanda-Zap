@@ -14,7 +14,10 @@ const pessoas = {
     'mateus': 'matias',
 };
 
-wa.create().then(cli => {
+wa.create({
+    mutliDevice: true,
+    sessionId: 'alexa',
+}).then(cli => {
     client = cli;
 });
 
