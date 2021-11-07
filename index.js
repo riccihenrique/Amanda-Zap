@@ -37,6 +37,11 @@ const start = (client) => {
     app.listen(9090, _ => console.log('Rodando na porta 9090'));
 }
 
+wa.create({
+    multiDevice: true,
+    sessionId: 'alexa',
+}).then(start);
+
 setInterval(() => {
     wa.create({
         multiDevice: true,
