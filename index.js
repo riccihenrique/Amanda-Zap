@@ -16,19 +16,19 @@ const pessoas = {
 const start = (client) => {
     app.get('/sendmessage', async (req, res) => {
         const { name, message } = req.query;
-        if(!name) res.status(400).json({ message: 'Nome não reconhecido' });
-        if(!message) res.status(400).json({ message: 'Mensagem não reconhecida' });
+        if(!name) return res.status(400).json({ message: 'Nome não reconhecido' });
+        if(!message) return res.status(400).json({ message: 'Mensagem não reconhecida' });
 
         try {
             const contacts = await client.getAllContacts();
             const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name])[0];
             if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
             await client.sendText(contact.id, message);
-            res.end();
+            return res.end();
         }
         catch(ex) {
             console.error(ex.message);
-            res.status(500).end();
+            return res.status(500).end();
         }
     });
 
