@@ -1,0 +1,11 @@
+version: '3'
+services:
+  amanda_zap:
+    build: .
+    ports:
+      - "9090:9090"
+    restart: always
+    container_name: amanda_zap
+    volumes:
+      - .:/app
+    working_dir: /app

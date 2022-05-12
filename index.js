@@ -11,19 +11,20 @@ const pessoas = {
     'zé': 'zé',
     'dona alice': 'dona alice',
     'mateus': 'matias',
+    'pedro leite': 'pedro leite'
 };
 
 const start = (client) => {
     app.get('/sendmessage', async (req, res) => {
         const { name, message } = req.query;
-        if(!name) return res.status(400).json({ message: 'Nome não reconhecido' });
-        if(!message) return res.status(400).json({ message: 'Mensagem não reconhecida' });
+        if(!name) return res.status(400).json({ message: 'O Nome se perdeu no caminho' });
+        if(!message) return res.status(400).json({ message: 'A mensagem se perdeu no caminho' });
 
         try {
             const contacts = await client.getAllContacts();
-            const contact = contacts.filter(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name])[0];
-            if(!contact) res.status(400).json({ message: 'Contato não encontrado' });
-            await client.sendText(contact.id, message);
+            const contact = contacts.find(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name]);
+            if(!contact) return res.status(400).json({ message: `Não encontrei ${name} nos contatos` });
+            await client.sendText(contact.id, message.charAt(0).toUpperCase() + message.slice(1));
             return res.end();
         }
         catch(ex) {
@@ -32,7 +33,7 @@ const start = (client) => {
         }
     });
 
-    app.get('/', (req, res) => res.send('Ok'));
+    app.get('/', (_req, res) => res.send('Ok'));
 
     app.listen(9090, _ => console.log('Rodando na porta 9090'));
 }
