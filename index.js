@@ -39,6 +39,7 @@ const start = (client) => {
 
 wa.create({
     multiDevice: true,
+    useChrome: true,
     sessionId: 'alexa',
 }).then(start);
 

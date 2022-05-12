@@ -1,5 +1,4 @@
 node_modules
-
 # managed
 **.data.json
 **.node-persist**
@@ -7,3 +6,7 @@ node_modules
 logs
 *.data.json
 _IGNORE*
+
+# managed by open-wa
+**_IGNORE_**
+# end managed by open-wa
