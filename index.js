@@ -11,15 +11,17 @@ const pessoas = {
     'mateus': 'matias',    
 };
 
-const start = (client) => {
+const start = async (client) => {
+
+    const contacts = await client.getAllContacts();
     app.get('/sendmessage', async (req, res) => {
         const { name, message } = req.query;
         if(!name) return res.status(400).json({ message: 'O Nome se perdeu no caminho' });
         if(!message) return res.status(400).json({ message: 'A mensagem se perdeu no caminho' });
 
         try {
-            const contacts = await client.getAllContacts();
-            const contact = contacts.find(({ name: contactName }) => contactName && contactName.toLowerCase() === pessoas[name]);
+            const contact = contacts.find(({ name: contactName, isMyContact }) => contactName && isMyContact && contactName.toLowerCase() === pessoas[name]);
+            console.log(contact)
             if(!contact) return res.status(400).json({ message: `Não encontrei ${name} nos contatos` });
             await client.sendText(contact.id, message.charAt(0).toUpperCase() + message.slice(1));
             return res.end();
@@ -32,7 +34,7 @@ const start = (client) => {
 
     app.get('/', (_req, res) => res.send('Ok'));
 
-    app.listen(9090, _ => console.log('Rodando na porta 9090'));
+    app.listen(9091, _ => console.log('Rodando na porta 9091'));
 }
 
 wa.create({
