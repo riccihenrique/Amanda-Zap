@@ -7,11 +7,8 @@ const pessoas = {
     'duda': 'mor 💙',
     'pai': 'pai',
     'mãe': 'mãe',
-    'tenente lucas': 'tenente lucas',
-    'zé': 'zé',
-    'dona alice': 'dona alice',
-    'mateus': 'matias',
-    'pedro leite': 'pedro leite'
+    'sargento lucas': 'sargento lucas',        
+    'mateus': 'matias',    
 };
 
 const start = (client) => {
